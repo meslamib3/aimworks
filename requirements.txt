@@ -3,7 +3,7 @@ crewai
 openai
 chromadb
 duckdb
-pydantic<2.0
+pydantic
 rdflib
 networkx
 graphviz
