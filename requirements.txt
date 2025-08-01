@@ -1,6 +1,11 @@
+streamlit
 crewai
 openai
-streamlit
 chromadb
 duckdb
 pydantic<2.0
+rdflib
+networkx
+graphviz
+requests
+pyshacl           # optional – remove if you didn't install it
