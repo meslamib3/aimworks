@@ -8,4 +8,4 @@ rdflib
 networkx
 graphviz
 requests
-pyshacl           # optional – remove if you didn't install it
+pyshacl  # optional - remove if you didn't install it
