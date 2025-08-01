@@ -13,6 +13,10 @@ import streamlit as st
 import os, re, json, datetime, textwrap
 from typing import List, Dict, Optional
 
+# Use Streamlit secrets for deployment (e.g., Streamlit Cloud)
+if "OPENAI_API_KEY" in st.secrets:
+    os.environ.setdefault("OPENAI_API_KEY", st.secrets["OPENAI_API_KEY"])
+
 # -- LLM & multi-agent orchestration (CrewAI) --
 try:
     import openai
@@ -53,9 +57,10 @@ st.write(
 )
 
 # -- UI Inputs --
-question: str = st.text_input("**Research Question:**", 
+question: str = st.text_input("**Research Question:**",
     help="E.g. 'How does operating temperature affect hydrogen permeability of a Nafion membrane in PEM fuel cells?'")
-api_key: str = st.text_input("**OpenAI API Key** (required for GPT-4):", type="password")
+api_key_default = os.getenv("OPENAI_API_KEY", "")
+api_key: str = st.text_input("**OpenAI API Key** (required for GPT-4):", type="password", value=api_key_default)
 
 # -- Initialize session state --
 if "features_text" not in st.session_state:
