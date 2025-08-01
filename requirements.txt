@@ -1,11 +1,11 @@
-streamlit
-crewai
-openai
-chromadb
-duckdb
-pydantic
-rdflib
-networkx
-graphviz
-requests
-pyshacl  # optional - remove if you didn't install it
+streamlit  
+crewai  
+openai  
+chromadb  
+duckdb  
+rdflib  
+networkx  
+graphviz  
+requests  
+pyshacl  
+pysqlite3-binary    # Added to upgrade SQLite

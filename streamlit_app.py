@@ -10,6 +10,12 @@ Full, functional Streamlit app implementing:
   - Detailed logging via Streamlit UI for traceability and reproducibility
 """
 
+import sys
+import sqlite3  # import standard sqlite3
+__import__('pysqlite3')  # import the pysqlite3 module (ensures newer SQLite)
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')  # replace sqlite3 with pysqlite3
+
+
 import streamlit as st
 import os, re, json, datetime, textwrap, subprocess
 from typing import List, Dict, Optional
