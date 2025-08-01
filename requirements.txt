@@ -1,5 +1,6 @@
 crewai
 openai
 streamlit
-chromadb==0.5.0
+chromadb
+duckdb
 pydantic<2.0
